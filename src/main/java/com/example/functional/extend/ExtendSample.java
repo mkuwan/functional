@@ -106,9 +106,5 @@ public class ExtendSample {
 //        FishClass errFish = new AnimalBaseClass("さかな");
         //　new AnimalBaseClass("さかな")では以下のコードを実行することができないということ
 //        errFish.Swim();
-
-
     }
-
-
 }

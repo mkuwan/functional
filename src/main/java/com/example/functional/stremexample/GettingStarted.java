@@ -1,4 +1,4 @@
-package com.example.functional;
+package com.example.functional.stremexample;
 
 import com.example.functional.mockdata.MockData;
 import com.example.functional.model.Person;
@@ -71,6 +71,7 @@ public class GettingStarted {
     @Test
     public void declarativeApproach() throws IOException {
         List<Person> people = MockData.getPeople();
+        // 以下でブレークポイントを設定して、デバッグ実行、デバッグコンソールでストリームをトレースしてみましょう
         List<Person> youngPeople = people.stream()
                 .filter(p -> p.getAge() <= 18)  // 実際はこのように定義されています filter(Predicate<? super T> predicate)
                 .limit(10)

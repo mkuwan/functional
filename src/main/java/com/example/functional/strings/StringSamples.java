@@ -37,9 +37,9 @@ public class StringSamples {
         System.out.println(valueA==valueB);                                 // true
     }
 
+
     /**
      * プリミティブ型と同じことをString型で行ったどうなる？
-     * この場合は...
      */
     @Test
     public void stringTypeSample(){

@@ -15,6 +15,7 @@ public class GenericSample {
     /**
      * メソッドをひとつだけ宣言しているのが特徴です
      */
+    @FunctionalInterface   //　なくても問題ないが、これをつけておくと複数のメソッドを記入したときにコンパイルエラーとすることができる
     interface Sample {
         void method();
     }
@@ -25,6 +26,7 @@ public class GenericSample {
     public class GenericExercise {
         public void exercise() {
             // ジェネリック型の実装
+            //   本来はclass SampleImpl implements Sampleというインタフェースを継承したクラスが必要だがそれを短縮してる
             Sample sample = new Sample() {
                 @Override
                 public void method() {
@@ -41,6 +43,7 @@ public class GenericSample {
         GenericExercise exercise = new GenericExercise();
         exercise.exercise();
     }
+
 
     /**
      * ラムダにしたもの

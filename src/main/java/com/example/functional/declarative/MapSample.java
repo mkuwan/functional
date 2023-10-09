@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 /**
  * StreamAPIのmapとreduceのサンプル
  */
-public class MapAndReduce {
+public class MapSample {
 
     List<Person> people = MockData.getPeople();
 
-    public MapAndReduce() throws IOException {
+    public MapSample() throws IOException {
     }
 
     /**

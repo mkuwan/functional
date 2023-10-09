@@ -21,7 +21,7 @@ public class WildCardsSample {
      */
     public class GenericClass<T> {
         public void viewData(T value){
-            System.out.println(value.toString());
+            System.out.println("Type:=" + value.getClass().getSimpleName() + ", value:=" + value.toString());
         }
     }
 
@@ -48,10 +48,15 @@ public class WildCardsSample {
     // 上限付きワイルドカードを使用したメソッド
     public void sum(List<? extends Number> numbers){
         result = 0d;
+        String typeName = "";
+        String superClassName = "";
         for (Number n : numbers) {
             result += n.doubleValue();
+            typeName = n.getClass().getSimpleName();
+            superClassName = n.getClass().getSuperclass().getSimpleName();
         }
         System.out.println("合計は" + result);
+        System.out.println("使用されている型は" + typeName + ", スーパークラスは" + superClassName);
     }
 
     @Test
@@ -98,6 +103,7 @@ public class WildCardsSample {
     public void addFish(List<? super FishClass> fishList, String name) {
         fishList.add(new FishClass(name));
         System.out.println(name + "が追加されたよ");
+        System.out.println("使用されている型は" + fishList.get(0).getClass().getSimpleName());
     }
 
     @Test

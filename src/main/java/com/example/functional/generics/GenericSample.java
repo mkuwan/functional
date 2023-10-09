@@ -64,6 +64,10 @@ public class GenericSample {
     }
 
 
+    /**
+     * この関数型インタフェースについてJavaでは定義済みのものがあります
+     *  Consumer<T>, Predicate<T>, Supplier<T>, Function<T, R>などです
+     */
 
 
     /**

@@ -63,6 +63,20 @@ public class StreamAPISamples {
     }
 
     /**
+     * 内部で匿名クラスとして宣言していたものをメソッドとして取り出した場合
+     */
+    @Test
+    public void for_each_method2() {
+        // Consumerの内容を定義(ラムダを使用)
+        Consumer<String> consumer = x -> {
+            if(x.length() > 2)      // if文の中の実行が1行だけの場合は { } を省略できる
+                System.out.println(x);
+        };
+
+        foods.forEach(consumer);
+    }
+
+    /**
      * forEachメソッドでの中身の抽出
      *      Consumer<? super String> actionをラムダ構文で作成
      *
@@ -107,9 +121,15 @@ public class StreamAPISamples {
 
     }
 
+    /**
+     * ラムダ構文を使うかメソッド参照を使うかは基本的にその人の好みで決まることが多い(笑)
+     */
+
+
 
     /**
      * StreamAPIを使用した場合
+     *     peekは状態を監視するのに使われるもので、内部的には何もしません(実際はConsumer<T>です)
      */
     @Test
     public void for_each_method_with_stream() {

@@ -93,18 +93,18 @@ public class ExtendSample {
         BirdClass birdClass = new BirdClass("つばめ");
         birdClass.fly();
 
-        // 基底クラス(スーパークラス)の変数に拡張クラス(サブクラス)を代入する
+        // 基底クラス(スーパークラス)の変数に拡張クラス(サブクラス)を代入することはできる
         AnimalBaseClass fish = new FishClass("サカナ");
         System.out.println(fish.getName());
-        // fish.Swim();  // これはできない
+        // fish.Swim();  // 基底クラスにはこのメソッドはないのでできない
 
         AnimalBaseClass bird = new BirdClass("トリ");
         System.out.println(bird.getName());
 
         // コンパイルエラー
-        // 理由:superクラスにはサブクラスの実装(swim)がないので、実装内容を渡すことができない
+        // 理由:superクラスにはサブクラスの実装(swim)がないので、実装を渡すことができない
 //        FishClass errFish = new AnimalBaseClass("さかな");
-        //　new AnimalBaseClass("さかな")では以下のコードを実行することができないということ
+        //　つまりAnimalBaseClass("さかな")では以下のコードを実行することができないということ
 //        errFish.Swim();
     }
 }

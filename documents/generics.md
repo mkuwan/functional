@@ -16,7 +16,7 @@ java.lang.Objectを継承したクラス\
 そのためあまり複雑に考えると訳が分からなくなるので注意
 
 ### StringSamples.javaで見てみよう
-
+### draw.ioの型：値型と参照型も見てみよう
 \
 \
 ところで継承ってなに？
@@ -61,7 +61,7 @@ IntegerのスーパークラスがNUmber, さらにそのスーパークラス�
 - オブジェクト型を継承: Integer.toString() はある
 
 ### ExtendSample.javaを見てみよう
-
+### draw.ioの継承も見てみよう
 
 
 # ジェネリクスとは
@@ -105,6 +105,7 @@ public class Sample {
         someClass.method(30000L);   // long
         someClass.method(3.14F);    // float
         someClass.method(1.2345D);  // double
+        
         // これもできてしまう
         someClass.method(new int[2]);
         someClass.method("あいうえお");
@@ -139,7 +140,7 @@ public class SomeClass<T> {
 
 さらにこのジェネリック型を使用し、特定のサブクラスやスーパークラスに限定するようにしたのが上限付きワイルドカード、下限付きワイルドカードです\
 上限付きワイルドカード<? extends T> \
-下限付きワイルドカード<? super T> \
+下限付きワイルドカード<? super T> 
 
 ### WildCardsSample.javaを見てみよう
 
@@ -150,6 +151,7 @@ public class SomeClass<T> {
 そうであることを明記するために @FunctionalInterface をつけることもできます
 
 ### GenericSample.javaを見てみよう
+
 
 ## 既存の関数型インタフェース
 ```

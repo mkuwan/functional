@@ -1,4 +1,4 @@
-package com.example.functional.stremexample;
+package com.example.functional.declarative;
 
 import com.example.functional.mockdata.MockData;
 import com.example.functional.model.Car;

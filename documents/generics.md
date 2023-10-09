@@ -168,10 +168,5 @@ public class SomeClass<T> {
 Streamの中間処理でもそれらが利用されていたりします
 
 
-## メソッド参照
-
-
-## ラムダ構文
-
-
-## Stream
+## メソッド参照, ラムダ構文, StreamAPI
+### StreamAPISamples.javaで確認しましょう

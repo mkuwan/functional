@@ -61,11 +61,11 @@ public class MapSample {
     @Test
     public void transformWithMap003() throws IOException {
          // filter内を取り出した
-        Predicate<PersonDTO> over20AndUnder30 = x -> x.getAge() >= 20 && x.getAge() < 22;
+        Predicate<PersonDTO> over20AndUnder22 = x -> x.getAge() >= 20 && x.getAge() < 22;
 
         var result = people.stream()
                 .map(p -> new PersonDTO(p.getId(), p.getFirstName(), p.getAge()))
-                .filter(over20AndUnder30)
+                .filter(over20AndUnder22)
                 .collect(Collectors.toList());
 
         result.forEach(x -> System.out.println(x));
@@ -77,13 +77,13 @@ public class MapSample {
      */
     @Test
     public void transformWithMap004() throws IOException {
-        Predicate<PersonDTO> over20AndUnder30 = x -> x.getAge() >= 20 && x.getAge() < 22;
+        Predicate<PersonDTO> over20AndUnder22 = x -> x.getAge() >= 20 && x.getAge() < 22;
         // map内を取り出した
         Function<Person, PersonDTO> transformDto = p -> new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
 
         var result = people.stream()
                 .map(transformDto)
-                .filter(over20AndUnder30)
+                .filter(over20AndUnder22)
                 .collect(Collectors.toList());
 
         // メソッド参照に変更
@@ -96,12 +96,12 @@ public class MapSample {
      */
     @Test
     public void transformWithMap005() throws IOException {
-        Predicate<PersonDTO> over20AndUnder30 = x -> x.getAge() >= 20 && x.getAge() < 22;
+        Predicate<PersonDTO> over20AndUnder22 = x -> x.getAge() >= 20 && x.getAge() < 22;
         Function<Person, PersonDTO> transformDto = p -> new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
 
         var result = people.stream()
                 .map(transformDto)
-                .filter(over20AndUnder30)
+                .filter(over20AndUnder22)
                 .collect(Collectors.toList());
 
         // メソッド構文に変更

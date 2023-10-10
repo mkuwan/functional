@@ -34,7 +34,7 @@ public class ClassSample extends BaseClass {
 }
 ```
 
-プリミティブ以外はこのObjectクラスを継承しています\
+プリミティブ以外はObjectクラスを継承しています\
 継承したサブクラスはObjectクラスに実装されているメソッドを使用することができる
 ```java
 // 基底クラス
@@ -148,7 +148,9 @@ public class SomeClass<T> {
 ジェネリック型のさらなる利用方法として匿名クラスがあります\
 これはインタフェースに1つだけのメソッドを作成し、それを継承したクラスを作成せずに使えるようにしたものです\
 ちなみに1つだけのメソッドを持つインタフェースを関数型インタフェースと言います\
-そうであることを明記するために @FunctionalInterface をつけることもできます
+そうであることを明記するために @FunctionalInterface をつけることもできます\
+ちなみに匿名クラスはJava Goldで学びますが、この部分を学ばずにConsumerとかPredicateを公式のようにSilverでは学ぶので理解が追い付かなくなってしまいがちです。
+
 
 ### GenericSample.javaを見てみよう
 

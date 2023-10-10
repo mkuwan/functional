@@ -83,7 +83,9 @@ public class ExtendSample {
         }
     }
 
-
+    /**
+     * 拡張クラスの実装例
+     */
     @Test
     public void extendsSample(){
 

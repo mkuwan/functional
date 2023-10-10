@@ -20,13 +20,31 @@ public class GenericSample {
         void method();
     }
 
+
+    /**
+     * 一般的な継承を使った使い方
+     */
+    private class extendedSample implements Sample {
+        @Override
+        public void method() {
+            System.out.println("implementsしてmethod()を呼び出しました");
+        }
+    }
+
+    @Test
+    public void extendedSampleTest() {
+        var extended = new extendedSample();
+        extended.method();
+    }
+
+
     /**
      * ジェネリック型 (匿名クラス)
      */
     public class GenericExercise {
         public void exercise() {
             // ジェネリック型の実装
-            //   本来はclass SampleImpl implements Sampleというインタフェースを継承したクラスが必要だがそれを短縮してる
+            //   本来はclass SampleImpl implements Sampleというインタフェースを継承したクラスを短縮してる
             Sample sample = new Sample() {
                 @Override
                 public void method() {
@@ -52,6 +70,7 @@ public class GenericSample {
     public class GenericLambdaExercise {
         public void exercise() {
             // ジェネリック型のラムダでの実装
+            // Overrideしたmethod()が消えているが、実は呼んでいる
             Sample sample = () -> System.out.println("ラムダでOverrideしたメソッドだよ");
             sample.method();
         }
@@ -78,7 +97,7 @@ public class GenericSample {
     void consumerTest() {
         Consumer<String> consumer = x -> System.out.println(x + "です");
 
-//        ラムダではない書き方だと以下のようになります(ラムダが使いやすいのがよく分かりますね)
+//        ラムダではない書き方だと以下のようになります
 //        Consumer<String> consumer = new Consumer<String>() {
 //            @Override
 //            public void accept(String s) {

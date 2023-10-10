@@ -13,7 +13,7 @@ import java.util.function.Consumer;
  * for-each
  * ラムダ構文
  * メソッド参照
- * SteamAPI　を同じListに対して処理を行った例
+ * SteamAPI　を同じListに対して処理を行った例 (文字の長さが2より大きいものを出力する)
  */
 public class StreamAPISamples {
 
@@ -67,9 +67,26 @@ public class StreamAPISamples {
      */
     @Test
     public void for_each_method2() {
+        // Consumerの内容を取り出した
+        Consumer<String> consumer = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                if(s.length() > 2)           // ついでにif文の後の実行が1行だけの場合は { } を省略できるのは覚えておこう
+                    System.out.println(s);
+            }
+        };
+
+        foods.forEach(consumer);
+    }
+
+    /**
+     * 内部で匿名クラスとして宣言していたものをメソッドとして取り出しラムダで書いた場合
+     */
+    @Test
+    public void for_each_method_by_lambda() {
         // Consumerの内容を定義(ラムダを使用)
         Consumer<String> consumer = x -> {
-            if(x.length() > 2)      // if文の中の実行が1行だけの場合は { } を省略できる
+            if(x.length() > 2)
                 System.out.println(x);
         };
 
@@ -77,10 +94,10 @@ public class StreamAPISamples {
     }
 
     /**
-     * forEachメソッドでの中身の抽出
-     *      Consumer<? super String> actionをラムダ構文で作成
+     * forEachメソッドでの中身をラムダ構文で作成
+     *      Consumer<? super String>
      *
-     * ラムダ構文：(String value) -> {}
+     * ラムダ構文：(T value) -> {}
      */
     @Test
     public void for_each_method_with_lambda() {
@@ -140,7 +157,7 @@ public class StreamAPISamples {
 
     /**
      * StreamAPIの処理順がよく分かる例
-     * デバッグで止めてストリームチェーンをトレースするとイメージしやすいかも
+     * peekはコメントアウトしてデバッグで止めてストリームチェーンをトレースすると処理がイメージしやすいかも
      */
     @Test
     public void streamApiProcess() {

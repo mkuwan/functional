@@ -79,7 +79,7 @@ public class Sample {
         SomeClass someClass = new SomeClass();
         
         // methodを呼び出し
-        someClass.method("100");
+        someClass.method(100);
     }
 }
 ```
@@ -163,7 +163,7 @@ public class SomeClass<T> {
         T get()
     Predicate<T>
         boolean test(T value)
-    FUnction<T, R>    
+    Function<T, R>    
         R apply(T value)
     
     ....Java Goldになると覚えるのが増えます💦

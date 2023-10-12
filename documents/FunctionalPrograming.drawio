@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-10-12T02:55:13.886Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="9uiYUo2nH599bd1_nilp" version="22.0.2" type="device" pages="4">
+<mxfile host="Electron" modified="2023-10-12T06:43:58.490Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="mnQrxzRk0MJQoRPcPNEp" version="22.0.2" type="device" pages="4">
   <diagram id="Fn184u3JUudABhEVFW1s" name="JavaRoadMap">
     <mxGraphModel dx="1243" dy="809" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -156,7 +156,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="KQtsZ2VCOvKE3ewzPczV" name="継承">
-    <mxGraphModel dx="1102" dy="1025" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1243" dy="809" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -249,7 +249,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BPpQIYX7NJ1y7qTwCnaz" name="Stream">
-    <mxGraphModel dx="1102" dy="1025" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1243" dy="809" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -313,8 +313,8 @@
         <mxCell id="3YFzkBGhafWc0HLmvaiu-1" value="&lt;ol style=&quot;&quot;&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(248, 249, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;コレクションでStreamを呼び出すと、コレクションの中身を1つずつ取り出して、Streamに渡し始めるます&lt;br&gt;パイプライン処理とも呼びます&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(248, 249, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;中間処理：&lt;br&gt;バケツリレーのようにStreamに流されたデータを処理していきます&lt;br&gt;filter はPredicateの処理を行い、trueとなったデータがあれば、次の処理に引き渡します&lt;br&gt;map はFunction&amp;lt;T, R&amp;gt;の処理を行い、R型のデータを次の処理に引き渡します&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(248, 249, 250); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;終端処理&lt;br&gt;パイプラインでフィルターリング、マッピングなどされた結果をまとめます&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="80" y="360" width="670" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="ZaAAvN2NhhfswHW7BS-9-1" value="&lt;span style=&quot;background-color: initial;&quot;&gt;JavaとC#のラムダ構文ができるまでの経緯&lt;/span&gt;&lt;br style=&quot;background-color: initial;&quot;&gt;&lt;ol style=&quot;&quot;&gt;&lt;li&gt;Javaの場合&lt;br&gt;関数型インタフェースで宣言したConsumer&amp;lt;T&amp;gt;, Supplier&amp;lt;T&amp;gt;, Predicate&amp;lt;T&amp;gt;, Function&amp;lt;T, R&amp;gt; などを利用していく&lt;br&gt;これをさらにラムダ構文で使う&lt;br&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;C#の場合&lt;br&gt;delegate型がありメソッドそのものを変数として扱えるようにした&lt;br&gt;これをAction&amp;lt;T, R, .....n&amp;gt;, Func&amp;lt;T, R, ....n&amp;gt;というものが作られ&lt;br&gt;そこからラムダ構文で使うようになりました&lt;/li&gt;&lt;/ol&gt;JavaのStreamAPIとC#のLinq&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;どちらもイテレータに対する処理です&lt;/span&gt;&lt;/li&gt;&lt;li&gt;JavaではSteam()でイテレータをパイプラインに渡します&lt;br&gt;パイプラインに渡されたものを中間処理用のメソッドで処理します&lt;/li&gt;&lt;li&gt;C#ではList自体にパイプライン処理が組み込まれていてStream()は不要&lt;br&gt;書き方はSQLに似たものを利用している(where, select)&lt;br&gt;LinqはListだけでなくxmlに対して等も処理できるようになっているがあまり使われてはいない。&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="85" y="720" width="670" height="430" as="geometry" />
+        <mxCell id="ZaAAvN2NhhfswHW7BS-9-1" value="&lt;span style=&quot;background-color: initial;&quot;&gt;JavaとC#のラムダ構文ができるまでの経緯&lt;/span&gt;&lt;br style=&quot;background-color: initial;&quot;&gt;&lt;ol style=&quot;&quot;&gt;&lt;li&gt;Javaの場合&lt;br&gt;関数型インタフェースで宣言したConsumer&amp;lt;T&amp;gt;, Supplier&amp;lt;T&amp;gt;, Predicate&amp;lt;T&amp;gt;, Function&amp;lt;T, R&amp;gt; などを利用していく&lt;br&gt;これをさらにラムダ構文で使う&lt;br&gt;推論できる型などはとにかく省略するという考え方&lt;br&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;C#の場合&lt;br&gt;delegate型がありメソッドそのものを変数として扱えるようにした&lt;br&gt;これをAction&amp;lt;T, R, .....n&amp;gt;, Func&amp;lt;T, R, ....n&amp;gt;というものが作られ&lt;br&gt;そこからラムダ構文で使うようになりました&lt;/li&gt;&lt;/ol&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;JavaのStreamAPIとC#のLinq&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;どちらもイテレータに対する処理です&lt;/span&gt;&lt;/li&gt;&lt;li&gt;JavaではSteam()でイテレータをパイプラインに渡します&lt;br&gt;パイプラインに渡されたものを中間処理用のメソッドで処理します&lt;/li&gt;&lt;li&gt;C#ではList自体にパイプライン処理が組み込まれていてStream()は不要&lt;br&gt;書き方はSQLに似たものを利用している(where, select)&lt;br&gt;LinqはListだけでなくxmlに対して等も処理できるようになっているがあまり使われてはいない。&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="85" y="680" width="670" height="470" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

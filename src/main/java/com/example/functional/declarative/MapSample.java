@@ -24,11 +24,12 @@ public class MapSample {
 
     /**
      * mapの基本的な使い方
+     * mapperは　Function<? super T, ? extends R>　が実装されることを求めている
      * @throws IOException
      */
     @Test
     public void transformWithMap001() throws IOException {
-        var result = people.stream()
+        List<PersonDTO> result = people.stream()
                 .map(p -> {
                     return new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
                 })

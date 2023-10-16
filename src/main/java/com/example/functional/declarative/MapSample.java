@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
 public class MapSample {
 
     List<Person> people = MockData.getPeople();
+    long startTime = 0L;
+    long endTime = 0L;
 
     public MapSample() throws IOException {
     }
@@ -28,7 +30,7 @@ public class MapSample {
      */
     @Test
     public void transformWithMap001() throws IOException {
-        var result = people.stream()
+        List<PersonDTO> result = people.stream()
                 .map(p -> {
                     return new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
                 })
@@ -106,5 +108,36 @@ public class MapSample {
 
         // メソッド構文に変更
         result.forEach(System.out::println);
+    }
+
+    @Test
+    public void transformWithMapPerformance() throws IOException {
+        // 1秒 = 1,000ミリ秒 = 100万マイクロ秒 = 10億ナノ秒
+        // 1ミリ秒 = 1,000マイクロ秒
+        // filterを先にした方が速いがわずかの差
+        startTime = System.nanoTime();
+        var result2 = people.stream()
+                .filter(x -> x.getAge() >= 20 && x.getAge() < 22)
+                .map(p -> {
+                    return new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
+                })
+
+                .collect(Collectors.toList());
+        endTime = System.nanoTime();
+        System.out.println(((double)(endTime - startTime) / 1_000_000) + "ミリ秒");
+
+        startTime = System.nanoTime();
+        var result = people.stream()
+                .map(p -> {
+                    return new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
+                })
+                .filter(x -> x.getAge() >= 20 && x.getAge() < 22)
+                .collect(Collectors.toList());
+        endTime = System.nanoTime();
+        System.out.println(((double)(endTime - startTime) / 1_000_000) + "ミリ秒");
+
+
+
+        result.forEach(x -> System.out.println(x));
     }
 }

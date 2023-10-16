@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 
-public class ExtendSample {
+public class ExtendSampleInterface {
 
     /**
      * 直感的に分かる例
@@ -62,7 +62,7 @@ public class ExtendSample {
          * 泳ぐというメソッドを独自実装する
          */
         public void swim(){
-            System.out.println("泳ぎます");
+            System.out.println(this.getName() + "が泳ぎます");
         }
     }
 
@@ -79,7 +79,7 @@ public class ExtendSample {
          * 飛ぶというメソッドを独自実装する
          */
         public void fly(){
-            System.out.println("飛びます");
+            System.out.println(this.getName() + "が飛びます");
         }
     }
 
@@ -103,10 +103,10 @@ public class ExtendSample {
         AnimalBaseClass bird = new BirdClass("トリ");
         System.out.println(bird.getName());
 
-        // コンパイルエラー
-        // 理由:superクラスにはサブクラスの実装(swim)がないので、実装を渡すことができない
+//        // コンパイルエラー
+//        // 理由:superクラスにはサブクラスの実装(swim)がないので、実装を渡すことができない
 //        FishClass errFish = new AnimalBaseClass("さかな");
-        //　つまりAnimalBaseClass("さかな")では以下のコードを実行することができないということ
+//        //　つまりAnimalBaseClass("さかな")では以下のコードを実行することができないということ
 //        errFish.Swim();
     }
 }

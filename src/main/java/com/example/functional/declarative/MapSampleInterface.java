@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 /**
  * StreamAPIのmapとreduceのサンプル
  */
-public class MapSample {
+public class MapSampleInterface {
 
     List<Person> people = MockData.getPeople();
     long startTime = 0L;
     long endTime = 0L;
 
-    public MapSample() throws IOException {
+    public MapSampleInterface() throws IOException {
     }
 
     /**
@@ -33,7 +33,10 @@ public class MapSample {
     public void transformWithMap001() throws IOException {
         List<PersonDTO> result = people.stream()
                 .map(p -> {
-                    return new PersonDTO(p.getId(), p.getFirstName(), p.getAge());
+                    return new PersonDTO(
+                            p.getId(),
+                            p.getFirstName(),
+                            p.getAge());
                 })
                 .filter(x -> x.getAge() >= 20 && x.getAge() < 22)
                 .collect(Collectors.toList());
@@ -50,7 +53,10 @@ public class MapSample {
 
         var result = people.stream()
                 // map内をラムダ構文に変更した場合
-                .map(p -> new PersonDTO(p.getId(), p.getFirstName(), p.getAge()))
+                .map(p -> new PersonDTO(
+                        p.getId(),
+                        p.getFirstName(),
+                        p.getAge()))
                 .filter(x -> x.getAge() >= 20 && x.getAge() < 22)
                 .collect(Collectors.toList());
 

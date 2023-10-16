@@ -10,13 +10,13 @@ import java.util.function.Predicate;
  * 抽象クラスやインタフェースをそのままインスタンス化させるような動作を行うことができます。
  * これを利用したものが関数型インタフェース Consumer<T>, Supplier<T>, Predicate<T>, Function<T, R> です
  */
-public class GenericSample {
+public class GenericSampleInterface {
 
     /**
      * メソッドをひとつだけ宣言しているのが特徴です
      */
     @FunctionalInterface   //　なくても問題ないが、これをつけておくと複数のメソッドを記入したときにコンパイルエラーとすることができる
-    interface Sample {
+    interface SampleInterface {
         void method();
     }
 
@@ -24,19 +24,26 @@ public class GenericSample {
     /**
      * 一般的な継承を使った使い方
      */
-    private class extendedSample implements Sample {
+    private class ImplementedSample implements SampleInterface {
+        /**
+         * インターフェイスで宣言されているメソッドの実装
+         */
         @Override
         public void method() {
             System.out.println("implementsしてmethod()を呼び出しました");
         }
     }
 
+    /**
+     * 継承したextendedSampleのテスト
+     */
     @Test
     public void extendedSampleTest() {
-        var extended = new extendedSample();
-        extended.method();
+        var implementedSample= new ImplementedSample();
+        implementedSample.method();
     }
 
+    //　******************************************************************* //
 
     /**
      * ジェネリック型 (匿名クラス)
@@ -44,8 +51,10 @@ public class GenericSample {
     public class GenericExercise {
         public void exercise() {
             // ジェネリック型の実装
-            //   本来はclass SampleImpl implements Sampleというインタフェースを継承したクラスを短縮してる
-            Sample sample = new Sample() {
+            //   本来はclass SampleImpl implements Sampleというインタフェースを継承したクラスを作る必要があるが
+            //   それを省略してインターフェイスをnewしている
+            //   インターフェイスのメソッドが一つだけという関数型インターフェイスのみ可能な書き方
+            SampleInterface sample = new SampleInterface() {
                 @Override
                 public void method() {
                     System.out.println("Overrideしたメソッドだよ");
@@ -63,6 +72,8 @@ public class GenericSample {
     }
 
 
+    //　******************************************************************* //
+
     /**
      * ラムダにしたもの
      * このほうが直感的な感じになります
@@ -71,7 +82,7 @@ public class GenericSample {
         public void exercise() {
             // ジェネリック型のラムダでの実装
             // Overrideしたmethod()が消えているが、実は呼んでいる
-            Sample sample = () -> System.out.println("ラムダでOverrideしたメソッドだよ");
+            SampleInterface sample = () -> System.out.println("ラムダでOverrideしたメソッドだよ");
             sample.method();
         }
     }
@@ -82,6 +93,8 @@ public class GenericSample {
         exercise.exercise();
     }
 
+
+    //　******************************************************************* //
 
     /**
      * この関数型インタフェースについてJavaでは定義済みのものがあります

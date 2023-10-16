@@ -12,7 +12,7 @@ import java.util.List;
  * <? extends T>
  * <? super T>
  */
-public class WildCardsSample {
+public class WildCardsSampleInterface {
 
     /* ------------------ジェネリック型-------------------------- */
     /**

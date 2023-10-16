@@ -26,6 +26,7 @@ public class MapSample {
 
     /**
      * mapの基本的な使い方
+     * mapperは　Function<? super T, ? extends R>　が実装されることを求めている
      * @throws IOException
      */
     @Test

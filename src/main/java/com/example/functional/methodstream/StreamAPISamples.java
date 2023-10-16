@@ -85,7 +85,7 @@ public class StreamAPISamples {
     @Test
     public void for_each_method_by_lambda() {
         // Consumerの内容を定義(ラムダを使用)
-        Consumer<String> consumer = x -> {
+        Consumer<String> consumer =  x -> {
             if(x.length() > 2)
                 System.out.println(x);
         };
@@ -109,9 +109,9 @@ public class StreamAPISamples {
         });
 
         // 型推論でString型の指定を省略できる
-        foods.forEach(food -> {
-            if(food.length() > 2){
-                System.out.println(food);
+        foods.forEach(x -> {
+            if(x.length() > 2){
+                System.out.println(x);
             }
         });
 

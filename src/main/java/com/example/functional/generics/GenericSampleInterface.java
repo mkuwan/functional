@@ -93,6 +93,13 @@ public class GenericSampleInterface {
         exercise.exercise();
     }
 
+    //　******************************************************************* //
+
+    @FunctionalInterface
+    public interface PredicateInterface<T>{
+        boolean test(T value);
+    }
+
 
     //　******************************************************************* //
 
